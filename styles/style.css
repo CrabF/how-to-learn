@@ -3,16 +3,9 @@ html {
 }
 
 .page {
-  /*display: flex;
-  flex-direction: column;*/
-  /*height: 100vh;*/
   min-width: 1100px;
-  /* мы ещё не умеем делать мобильную версию сайта, */
-  /* поэтому выше установлена минимальная ширина страницы */
   max-width: 1600px;
-  /* выше установили ограничение по максимальной ширине */
   margin: 0 auto;
-  /* выше для экранов больше 1600px отцентрировали весь контент */
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -23,10 +16,10 @@ html {
   display: flex;
   align-items: center;
   position: relative;
-  /* выше установили ограничения для секции */
+  background-color: #f2f2f2;
 }
 
-.logo__place_header {
+.header__logo_place_header {
   position: absolute;
   top: 30px;
   left: 64px;
@@ -35,15 +28,15 @@ html {
   z-index: 4;
 }
 
-.title {
-  width: 730px;
+.header__title {
+  max-width: 730px;
   margin-left: 64px;
   font-size: 102px;
   font-weight: 600;
   line-height: 92px;
   z-index: 3;
 }
- .subtitle {
+ .header__subtitle {
   width: 388px;
   position: absolute;
   bottom: 30px;
@@ -54,12 +47,12 @@ html {
   z-index: 3;
  }
 
- .link {
+ .header__link {
   color: #2f80ed;
   text-decoration: none;
  }
 
- .main-ilustration {
+ .header__main-ilustration {
   display: flex;
   width: 765px;
   height: 608px;
@@ -70,7 +63,6 @@ html {
   object-fit: cover;
  }
 
-/* ниже мы привели пример двух селекторов, чтобы вы вспомнили запись элемента */
 .header__square-pic {
   height: 568px;
   width: 568px;
@@ -81,7 +73,7 @@ html {
   z-index: 1;
 }
 
-.content {
+.main {
   min-height: 100vh;
 }
 
@@ -89,7 +81,6 @@ html {
 
 .description {
   display: flex;
-  height: 400px;
   margin-top: 100px;
 }
 
@@ -99,9 +90,8 @@ html {
   align-items: stretch;
   justify-content: space-between;
   width: 80%;
-  height: 100%;
   min-width: 784px;
-  margin: 0 100px;
+  margin: 0 auto;
 }
 
 .two-columns__brief {
@@ -121,21 +111,19 @@ html {
   min-width: 784px;
 }
 
-.paragraph {
+.two-columns__paragraph {
   margin: 0;
   font-size: 24px;
   line-height: 34px;
   font-weight: normal;
 }
 
-.paragraph__second {
-  margin: 30px 0;
-  font-size: 24px;
-  line-height: 34px;
-  font-weight: normal;
+.two-columns__paragraph:nth-of-type(2) {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
-.paragraph__second-conclusion{
+.two-columns__span-accent {
   font-weight: 600;
 }
 
@@ -155,49 +143,52 @@ html {
   margin-bottom: 100px;
 }
 
-.digits__title {
+.digits__section-title {
   width: 60%;
   text-align: center;
   line-height: 1.15;
   font-size: 60px;
   font-weight: 600;
-  margin: 100px 0 20px 0;
+  margin-top: 100px;
+  margin-bottom: 0;
 }
 
-.digits__subtitle {
+.digits__section-subtitle {
   width: 60%;
   text-align: center;
   line-height: 34px;
   font-size: 24px;
   font-weight: normal;
-  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 0;
 }
 
-.table {
+.digits__table {
   display: flex;
   width: 1100px;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.table_cell {
+.digits__table_cell {
   width: 250px;
   margin-top: 60px;
 }
 
-
-.table_cell_heading {
+.digits__table_cell_heading {
   line-height: 1.15;
   font-size: 24px;
   font-weight: 600;
+  margin: 0;
 }
 
-.table_cell_text {
+.digits__table_cell_text {
   line-height: 1.2;
   font-size: 18px;
   font-weight: normal;
   margin-top: 20px;
+  margin-bottom: 0;
 }
 
 /*Блок Фейнмана*/
@@ -207,12 +198,13 @@ html {
   flex-direction: column;
   align-items: center;
   position: relative;
-  height: 890px;
+  min-height: 890px;
   background-color: #f2f2f2;
 }
 
 .feynman__title {
   margin-top: 100px;
+  margin-bottom: 0;
   width: 648px;
   text-align: center;
   font-size: 120px;
@@ -225,7 +217,7 @@ html {
   font-size: 36px;
   line-height: 51px;
   font-weight: normal;
-  margin-top: 70px;
+  margin: 70px 0 0;
   z-index: 2;
 }
 
@@ -262,22 +254,24 @@ html {
   z-index: 1;
 }
 
-.kayfman__title_theme_dark {
+.kayfman__section-title_theme_dark {
   width: 60%;
   text-align: center;
   line-height: 1.15;
   font-size: 60px;
   font-weight: 600;
-  margin: 90px 0 20px 0;
+  margin: 90px 0 0;
+  z-index: 3;
 }
 
-.kayfman__subtitle_theme_dark {
+.kayfman__section-subtitle_theme_dark {
   width: 60%;
   text-align: center;
   line-height: 34px;
   font-size: 24px;
   font-weight: normal;
-  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 0;
 }
 
 .kayfman__triangle {
@@ -288,37 +282,24 @@ html {
   height: 877px;
   width: 877px;
   background-image: url(/images/kaufman-triangle.svg);
+  background-size: cover;
   z-index: 0;
 }
 
-.table_theme_dark {
-  display: flex;
-  width: 1100px;
-  flex-direction: row;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+.kayfman__table_theme_dark {
   margin-bottom: 90px;
 }
 
-.table_cell_theme_dark {
+.kayfman__table_cell_theme_dark {
   width: 200px;
   margin-top: 80px;
-  margin-right: 0;
   z-index: 3;
 }
 
-.table_cell_heading_theme_dark {
-  line-height: 1.15;
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.table_cell_text_theme_dark {
+.kayfman__table_cell_text_theme_dark {
   line-height: 1.2;
   font-size: 18px;
   font-weight: normal;
-  margin-bottom: 20px;
 }
 
 /*Блок Футер*/
@@ -337,24 +318,23 @@ html {
   justify-content: space-between;
   width: 90%;
   margin: 60px 0 40px 0;
-  height: 350px;
+  height: 250px;
 }
 
 .footer__column_content_copyright {
   display: flex;
-  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
   flex-basis: 711px;
 }
 
-.logo__place_footer {
+.footer__logo_place_footer {
   font-size: 30px;
   font-weight: bold;
+  margin: 0;
 }
 
 .footer__author {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   margin-bottom: 18px;
   margin-top: 18px;
   line-height: 25px;
@@ -377,20 +357,23 @@ html {
   line-height: 30px;
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin: 0;
 }
 
 .footer__column-links {
   display: flex;
   flex-direction: column;
+  margin: 20px 0 16px;
+}
+
+.footer__column-link {
   line-height: 30px;
   font-size: 18px;
   font-weight: normal;
 }
 
-.footer__social-icons {
-  display: flex;
-  align-items: center;
+.footer__social-icon {
+  margin-right: 10px;
 }
 
 .footer__social-icon-image {
